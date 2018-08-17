@@ -72,12 +72,18 @@ print("Hej, i detta program översätts ord till rövarspråket")
 fraga1=input("Skriv ett ord: ")
 
 nylista=[]  #ny lista
+nylista1=[]
 
-for i in range(0,len(fraga1-1)):  #ger nummer från noll till hur många bokstäver ordet är
-    split=fraga1[1]                 #tar ut första bokstaven från ordet
-    nylista.append(split)           #Första bokstaven läggs till på nylista
-    if not (split== "a" or "o" or "u" or "å" or "e" or "i" or  "y" or "ä" or "ö"):
-        nylista[i]= split + "o" + split #HÄR är det knas!!!
+for i in range((len(fraga1))):  #ger nummer från noll till hur många bokstäver ordet är
+    split=fraga1[0+i]                 #tar ut första bokstaven från ordet
+    nylista.append(split)   #lista med varje bokstav på varje plats
+    print(nylista)
 
-to_str="".join(nylista)
-print(to_str)
+for j in range(len(nylista)):
+    if not (nylista[j] == "a" or "o" or "u" or "å" or "e" or "i" or "y" or "ä" or "ö"):
+        #nylista1.insert(j, 30)
+        nylista1.insert(j, (nylista[j] + "o" +nylista[j])) #HÄR är det knas!!!
+        print(nylista1)
+        # to_str= "".join(nylista)
+        # print(to_str)
+
