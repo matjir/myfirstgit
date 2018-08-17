@@ -1,0 +1,22 @@
+import turtle
+from itertools import cycle
+
+färger=cycle(["red","blue","yellow", "orange","purple","green"])
+
+
+def circleturtle(storlek,vinkel,vändning):
+    turtle.pencolor(next(färger))
+    turtle.circle(storlek)
+    turtle.right(vinkel)
+    turtle.forward(vändning)
+    turtle.bgcolor(next(färger))
+
+    circleturtle(storlek+5,vinkel-20, vändning-10)  #dessa kan ändras för att få olika utseenden
+
+
+turtle.speed("slow")
+turtle.pensize(4)
+
+circleturtle(30,0,1) #startvärderna
+
+

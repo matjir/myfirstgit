@@ -26,6 +26,7 @@
 
 #----------------------------------------------------------------------------------------------------------------------
 ##skriver ut ett statement beroende på random nummer
+
 # fortune=["You are the best!", "You're rocking!", "How awsome you're today!", "Hi there cooling!"]
 #
 # import random
@@ -33,6 +34,7 @@
 # print("Your fortune cookie is telling you: " + str(fortune[randomnumber]))
 # -------------------------------------------------------------------------------------------------------
 ##skriver ut nummer mellan två siffror
+
 # fraga1=int(input("Vilket är ditt startnummer?: "))
 # fraga2=int(input("Vilket är ditt slutnummer?: "))
 # nylista=[]
@@ -73,17 +75,22 @@ fraga1=input("Skriv ett ord: ")
 
 nylista=[]  #ny lista
 nylista1=[]
+vowels = "aoiuyeäöå"
+
 
 for i in range((len(fraga1))):  #ger nummer från noll till hur många bokstäver ordet är
     split=fraga1[0+i]                 #tar ut första bokstaven från ordet
     nylista.append(split)   #lista med varje bokstav på varje plats
-    print(nylista)
 
 for j in range(len(nylista)):
-    if not (nylista[j] == "a" or "o" or "u" or "å" or "e" or "i" or "y" or "ä" or "ö"):
-        #nylista1.insert(j, 30)
-        nylista1.insert(j, (nylista[j] + "o" +nylista[j])) #HÄR är det knas!!!
-        print(nylista1)
-        # to_str= "".join(nylista)
-        # print(to_str)
+    if not nylista[j] in vowels:
+
+        nylista1.append(nylista[j] + "o" + nylista[j])
+    else:
+        nylista1.append(nylista[j])
+
+
+
+to_str2="".join(nylista1)
+print("På rövarspårket är detta: " + to_str2)
 
